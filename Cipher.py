@@ -82,7 +82,10 @@ class Cipher:
                     #   1. find keyword index
                     for y in local_columns:
                         if y == local_keyword[keyword_counter]:
-                            print(y)
+                            # print(y)
+                            # print(local_columns.index(y))
+
+                            print(x[local_columns.index(y)])
 
                     #   2. encrypt with keyword
 
