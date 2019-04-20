@@ -47,47 +47,20 @@ class Cipher:
                 keyword_counter -= 6
 
     def encode_text_msg(self, args):
-        #   1. local variables
         local_columns = self._data_set
         local_msg = args
         local_cipher = self._all_data_sets[:]
         local_keyword = self._keyword[:]
-        local_keyword_dataset = self._keyword_data_set[:]
         encoded_msg = []
-
-        print(local_msg)
-        print(local_keyword)
-        print(local_columns)
-        # print(local_cipher)
-        print(local_keyword_dataset)
-
-        #   2. transcribe to correct dataset
-        # counter = 0
-        # while counter != len(local_msg):
-        #     print(local_msg[counter])
-        #     counter += 1
-
-        # test = 'p'
-        # for x in local_cipher:
-        #     if x[0] == test:
-        #         print(x)
 
         counter = 0
         keyword_counter = 0
         while counter != len(local_msg):
             for x in local_cipher:
                 if x[0] == local_msg[counter]:
-                    print(x)
-
-                    #   1. find keyword index
                     for y in local_columns:
                         if y == local_keyword[keyword_counter]:
-                            # print(y)
-                            # print(local_columns.index(y))
-
-                            print(x[local_columns.index(y)])
-
-                    #   2. encrypt with keyword
+                            encoded_msg.append(x[local_columns.index(y)])
 
             if keyword_counter < 6:
                 keyword_counter += 1
@@ -95,12 +68,5 @@ class Cipher:
                 keyword_counter -= 6
             counter += 1
 
-
-
-
-        # for x in local_msg:
-
-
-
-        #   3. translate to correct letter
+        print(encoded_msg)
 
