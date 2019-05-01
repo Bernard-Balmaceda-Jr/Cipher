@@ -1,11 +1,10 @@
 #!/usr/bin/env python2.7
 
-from Cipher import *
 from CipherVigenere import *
 
 
 def main():
-    print('Vigenere Encrpytion Program - Initialised')
+    print('Vigenere Encrpytion Program - Initialised\n')
 
     my_cipher = CipherVigenere()
     my_cipher.cipher_matrix()
