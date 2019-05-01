@@ -10,6 +10,7 @@ def main():
     my_cipher.cipher_matrix()
 
     my_cipher.msg_encryption('We are Anonymous')
+    my_cipher.msg_decryption(';ssGPF7UBWTWNBOG')
 
 
 if __name__ == '__main__':
