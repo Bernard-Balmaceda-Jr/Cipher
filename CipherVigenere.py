@@ -62,3 +62,32 @@ class CipherVigenere:
         s = s.join(encrypted_msg)
         print(s)
 
+    def msg_decryption(self, args):
+        cipher_matrix = self._cipher_matrix[:]
+        columns = self._cipher_matrix[0][:]
+        msg = args
+        keyword = 'keyword'
+        decrypted_msg = []
+
+        msg_counter = 0
+        keyword_counter = 0
+
+        #   1. todo: comments to reflect algorithm
+        while msg_counter != len(msg):
+            for x in cipher_matrix:
+                if x[0] == keyword[keyword_counter]:
+                    for y in x:
+                        if y == args[msg_counter]:
+                            decrypted_msg.append(columns[x.index(y)])
+
+            if keyword_counter < len(keyword) - 1:
+                keyword_counter += 1
+            elif keyword_counter >= len(keyword) - 1:
+                keyword_counter -= len(keyword) -1
+
+            msg_counter += 1
+
+        s = ""
+        s = s.join(decrypted_msg)
+        print(s)
+
