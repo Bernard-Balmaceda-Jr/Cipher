@@ -3,11 +3,19 @@ import string
 
 
 class CipherVigenere:
+    """
+    Cipher Vigenere
+    """
     def __init__(self):
         self._cipher_matrix = []
         self._data_set_length = 0
 
     def cipher_matrix(self, args=None):
+        """
+        Cipher matrix for encryption
+        :param args:
+        :return:
+        """
         data_set = []
 
         #   1. pass cipher characters
@@ -34,6 +42,11 @@ class CipherVigenere:
         #     print(x)
 
     def msg_encryption(self, args):
+        """
+        Encryption Algorithm
+        :param args:
+        :return:
+        """
         cipher_matrix = self._cipher_matrix[:]
         columns = self._cipher_matrix[0][:]
         msg = args
@@ -60,9 +73,15 @@ class CipherVigenere:
 
         s = ""
         s = s.join(encrypted_msg)
-        print(s)
+        # print(s)
+        return s
 
     def msg_decryption(self, args):
+        """
+        Decryption Algorithm
+        :param args:
+        :return:
+        """
         cipher_matrix = self._cipher_matrix[:]
         columns = self._cipher_matrix[0][:]
         msg = args
