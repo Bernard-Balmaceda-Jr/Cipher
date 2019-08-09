@@ -1,5 +1,6 @@
 #!/usr/bin/env python2.7
 import string
+import unittest
 
 
 class CipherVigenere:
@@ -60,7 +61,8 @@ class CipherVigenere:
 
         s = ""
         s = s.join(encrypted_msg)
-        print(s)
+        # print(s)
+        return s
 
     def msg_decryption(self, args):
         cipher_matrix = self._cipher_matrix[:]
@@ -89,5 +91,24 @@ class CipherVigenere:
 
         s = ""
         s = s.join(decrypted_msg)
-        print(s)
+        # print(s)
+        return s
+
+class TestCipherVigenere(unittest.TestCase):
+    def test_msg_encryption(self):
+        plain_msg = "We are Anonymous."
+        encoded_msg = ';ssGPF7UBWTWNBOG9'
+
+        cv = CipherVigenere()
+        cv.cipher_matrix()
+        self.assertEquals(cv.msg_encryption(plain_msg), encoded_msg)
+
+    def test_msg_decryption(self):
+        plain_msg = 'We are Anonymous.'
+        encoded_msg = ';ssGPF7UBWTWNBOG9'
+
+        cv = CipherVigenere()
+        cv.cipher_matrix()
+        a=cv.msg_decryption(encoded_msg)
+        self.assertEquals(a, plain_msg)
 
