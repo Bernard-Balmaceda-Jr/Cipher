@@ -65,7 +65,7 @@ class CipherVigenere:
     def msg_decryption(self, args):
         cipher_matrix = self._cipher_matrix[:]
         columns = self._cipher_matrix[0][:]
-        msg = args
+        msg = r'' + args
         keyword = 'keyword'
         decrypted_msg = []
 
