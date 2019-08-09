@@ -10,9 +10,14 @@ def main():
     my_cipher = CipherVigenere()
     my_cipher.cipher_matrix()
 
-    text = input("Enter text to encrypt")
-    my_cipher.msg_encryption(text .format(r''))
-    my_cipher.msg_decryption("e+MqySreoVULZzII!qUF7uFMqJFtCCV")
+
+    my_cipher.msg_encryption('We are Anonymous. We do not forgive. We do not forget. Expect us.')
+    my_cipher.msg_decryption(';ssGPF7UBWTWNBOG9q?F7xCsTMU7zCZMGWr	8}KiEBeBWZiGBLuMZlRRDMIRlHM`')
+
+    # text = input("Enter text to encrypt")
+    # my_cipher.msg_encryption(text .format(r''))
+    # my_cipher.msg_decryption("e+MqySreoVULZzII!qUF7uFMqJFtCCV")
+
 
     my_enigma = CipherEnigma()
     my_enigma.cipher_matrix()
