@@ -112,21 +112,18 @@ class CipherVigenere:
         # print(s)
         return s
 
-class TestCipherVigenere(unittest.TestCase):
-    def test_msg_encryption(self):
-        plain_msg = "We are Anonymous."
-        encoded_msg = ';ssGPF7UBWTWNBOG9'
 
+class TestCipherVigenere(unittest.TestCase):
+    plain_msg = "We are Anonymous."
+    encoded_msg = ';ssGPF7UBWTWNBOG9'
+
+    def test_msg_encryption(self):
         cv = CipherVigenere()
         cv.cipher_matrix()
-        self.assertEquals(cv.msg_encryption(plain_msg), encoded_msg)
+        self.assertEquals(cv.msg_encryption(self.plain_msg), self.encoded_msg)
 
     def test_msg_decryption(self):
-        plain_msg = 'We are Anonymous.'
-        encoded_msg = ';ssGPF7UBWTWNBOG9'
-
         cv = CipherVigenere()
         cv.cipher_matrix()
-        a=cv.msg_decryption(encoded_msg)
-        self.assertEquals(a, plain_msg)
+        self.assertEquals(cv.msg_decryption(self.encoded_msg), self.plain_msg)
 
